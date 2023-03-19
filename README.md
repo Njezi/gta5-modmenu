@@ -1,2 +1,2 @@
-# gta5-python-modmenu
-My attempt at making a GTA 5 mod menu in Python
+# gta5-modmenu
+My attempt at making a GTA 5 mod menu in C++
