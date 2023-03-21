@@ -9,8 +9,7 @@ int main()
 
     cout << "What would you want to enable?\nGod Mode (G)\nRun Speed (R)\nSuicide (S)\n";
     cin >> user;
-    cout << user << "\n";
-
+    
 
     //hey this is my first time making a gta 5 menu in c++ so if the if statements make ur head hurt please tell me how to fix it lol
 
