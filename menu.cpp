@@ -1,28 +1,40 @@
 #include <iostream>
-#include <memoryapi.h>
-#include <winable.h>
-using namespace std;
+#include <string>
+#include <algorithm>
 
-int main()
-{
-    string user;
+struct response {
+    char letter;
+    std::string response;
+};
 
-    cout << "What would you want to enable?\nGod Mode (G)\nRun Speed (R)\nSuicide (S)\n";
-    cin >> user;
-    
+int main() {
+    // Define an array of LetterResponse structs
+    response letters[3] = {
+     {'g', "GodMode"},
+     {'r', "Run Speed"},
+     {'s', "Suicide"}
+    };
 
-    //hey this is my first time making a gta 5 menu in c++ so if the if statements make ur head hurt please tell me how to fix it lol
+    // Prompt the user to input a letter
+    std::cout << "Enter a letter: ";
+    char inputLetter;
+    std::cin >> inputLetter;
 
-    if (user == "G" || user == "g")
-    {
-        cout << "God Mode\n";
+    // Convert the input letter to uppercase or lowercase
+    inputLetter = std::tolower(inputLetter); 
+
+    // Search the array for the lowercase or uppercase input letter and output its response
+    bool foundLetter = false;
+    for (int i = 0; i < sizeof(letters); i++) {
+        if (std::tolower(letters[i].letter) == inputLetter) { 
+            std::cout << letters[i].response << std::endl;
+            foundLetter = true;
+            break;
+        }
     }
-    else if (user == "R" || user == "r")
-    {
-        cout << "Run Speed\n";
-    }
-    else if (user == "S" || user == "s")
-    {
-        cout << "Suicide\n";
+
+    // If the input letter is not found in the array, output an error message
+    if (!foundLetter) {
+        std::cout << "Input not found." << std::endl;
     }
 }
